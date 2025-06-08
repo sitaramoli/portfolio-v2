@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer';
 import {portfolioData} from '@/config/portfolio-data';
 import React from "react";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
     title: `${portfolioData.name} - ${portfolioData.jobTitle}`,
@@ -28,6 +29,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         </div>
         <Footer/>
         <Toaster/>
+        <Analytics/>
         </body>
         </html>
     );
