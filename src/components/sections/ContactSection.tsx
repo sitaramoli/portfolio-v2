@@ -38,15 +38,35 @@ export default function ContactSection() {
         },
     });
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // In a real app, you'd handle form submission here (e.g., send to an API endpoint)
-        console.log(values);
-        toast({
-            title: "Message Sent!",
-            description: "Thanks for reaching out. I'll get back to you soon.",
-        });
-        form.reset();
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            const response = await fetch("/api/contact/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(values),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Something went wrong");
+            }
+
+            toast({
+                title: "Message Sent!",
+                description: "Thanks for reaching out. I'll get back to you soon.",
+            });
+            form.reset();
+        } catch (error: any) {
+            toast({
+                title: "Error",
+                description: error.message || "Failed to send message. Please try again later.",
+                variant: "destructive",
+            });
+        }
     }
+
 
     return (
         <Section id="contact" title={contact.title} subtitle={contact.subtitle} className="bg-muted/30">
