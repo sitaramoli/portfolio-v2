@@ -1,5 +1,20 @@
 import type {LucideIcon} from 'lucide-react';
-import {Github, Linkedin, Twitter, Mail, Briefcase, GraduationCap, Edit3, Globe} from 'lucide-react';
+import {Github, Linkedin, Mail, Briefcase, GraduationCap, Edit3, Globe} from 'lucide-react';
+import {
+    jsIcon,
+    tsIcon,
+    pythonIcon,
+    javaIcon,
+    reactIcon,
+    nextIcon,
+    nodeIcon,
+    mySqlIcon,
+    postgresIcon,
+    htmlIcon,
+    cssIcon,
+    portfolioV2
+} from "@/app/assets"
+import {StaticImageData} from "next/image";
 
 export interface SocialLink {
     name: string;
@@ -11,7 +26,7 @@ export interface Project {
     id: string;
     title: string;
     description: string;
-    imageUrl: string;
+    imageUrl: string | StaticImageData;
     tags: string[];
     liveUrl?: string;
     sourceUrl?: string;
@@ -20,10 +35,9 @@ export interface Project {
 
 export interface Skill {
     name: string;
-    logoUrl?: string;
+    logoUrl?: string | StaticImageData;
 }
 
-// New interface for individual positions within a company
 export interface PositionEntry {
     role: string;
     startDate: string;
@@ -31,12 +45,11 @@ export interface PositionEntry {
     description: string[];
 }
 
-// Updated Experience interface
 export interface Experience {
     company: string;
     location?: string;
     icon?: LucideIcon;
-    positions: PositionEntry[]; // Array of positions
+    positions: PositionEntry[];
 }
 
 
@@ -97,11 +110,6 @@ export interface PortfolioData {
         subtitle: string;
         items: Project[];
     };
-    blog: {
-        title: string;
-        subtitle: string;
-        posts: BlogPost[];
-    };
     contact: {
         title: string;
         subtitle: string;
@@ -123,8 +131,8 @@ export interface PortfolioData {
 }
 
 export const portfolioData: PortfolioData = {
-    name: "Alex Johnson",
-    jobTitle: "Full-Stack Developer & UI/UX Enthusiast",
+    name: "Baymax",
+    jobTitle: "Software Engineer | Full-Stack Developer",
     hero: {
         greeting: "Hello, I'm",
         tagline: "Crafting digital experiences that inspire and engage.",
@@ -132,9 +140,8 @@ export const portfolioData: PortfolioData = {
         ctaText: "Explore My Work",
         ctaLink: "#projects",
         socialLinks: [
-            {name: "GitHub", url: "https://github.com", icon: Github},
-            {name: "LinkedIn", url: "https://linkedin.com", icon: Linkedin},
-            {name: "Twitter", url: "https://twitter.com", icon: Twitter},
+            {name: "GitHub", url: "https://github.com/sitaramoli", icon: Github},
+            {name: "LinkedIn", url: "https://www.linkedin.com/in/sita-ram-oli-a35740208/", icon: Linkedin},
         ],
     },
     aboutMe: {
@@ -147,61 +154,64 @@ export const portfolioData: PortfolioData = {
             },
             {
                 title: "Interests & Hobbies",
-                content: "Outside of coding, I enjoy exploring new technologies, contributing to open-source projects, hiking in nature, and photography. These activities help me stay creative and bring fresh perspectives to my work.",
+                content: "Outside of coding, I enjoy exploring new technologies, hiking in nature, and photography. These activities help me stay creative and bring fresh perspectives to my work.",
                 icon: Globe,
             }
         ],
         skills: [
-            {name: "JavaScript", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "TypeScript", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "React", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "Next.js", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "Node.js", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "Python", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "UI/UX Design", logoUrl: "https://placehold.co/64x64.png"},
-            {name: "Figma", logoUrl: "https://placehold.co/64x64.png"},
+            {name: "JavaScript", logoUrl: jsIcon},
+            {name: "TypeScript", logoUrl: tsIcon},
+            {name: "Python", logoUrl: pythonIcon},
+            {name: "Java", logoUrl: javaIcon},
+            {name: "React", logoUrl: reactIcon},
+            {name: "Next.js", logoUrl: nextIcon},
+            {name: "Node.js", logoUrl: nodeIcon},
+            {name: "MySQL", logoUrl: mySqlIcon},
+            {name: "PostgreSQL", logoUrl: postgresIcon},
+            {name: "HTML", logoUrl: htmlIcon},
+            {name: "CSS", logoUrl: cssIcon},
         ],
         experience: [
             {
-                company: "Tech Solutions Inc.",
-                location: "San Francisco, CA",
+                company: "Cedar Gate Services",
+                location: "Lalitpur, Nepal",
                 icon: Briefcase,
                 positions: [
                     {
-                        role: "Senior Developer",
-                        startDate: "Jan 2022",
-                        endDate: "Present",
+                        role: "Software Engineer",
+                        startDate: "May 2024",
+                        endDate: "April 2025",
                         description: [
-                            "Led development of key features for a flagship SaaS product.",
-                            "Mentored junior developers and conducted code reviews.",
-                            "Architected scalable solutions for new product modules."
+                            "Developed robust applications by thoroughly analyzing software requirements and writing clean, industry-standard code.",
+                            "Ensured software quality through comprehensive unit testing, debugging, and conducting detailed code reviews to enhance performance.",
+                            "Created clear technical documentation and collaborated effectively with teams to support development processes and drive successful project outcomes.",
                         ],
                     },
                     {
-                        role: "Software Developer",
-                        startDate: "Jan 2020",
-                        endDate: "Dec 2021",
+                        role: "Associate Software Engineer",
+                        startDate: "May 2023",
+                        endDate: "May 2024",
                         description: [
-                            "Developed and maintained features for various modules.",
-                            "Collaborated with cross-functional teams to deliver high-quality software.",
-                            "Contributed to the migration of legacy systems to modern microservices."
+                            "Built Java applications using OOP principles and best practices.",
+                            "Created UI with HTML/CSS and managed SQL databases with procedures and functions.",
+                            "Analyzed requirements, worked with experts, documented features, and integrated new APIs.",
                         ],
                     },
                 ],
             },
             {
-                company: "Web Creators LLC",
-                location: "Remote",
+                company: "Outside",
+                location: "Lalitpur, Nepal",
                 icon: Briefcase,
                 positions: [
                     {
-                        role: "Frontend Developer",
-                        startDate: "Jun 2017",
-                        endDate: "Dec 2019",
+                        role: "Internship",
+                        startDate: "Dec 2022",
+                        endDate: "Mar 2022",
                         description: [
-                            "Developed responsive and interactive user interfaces for various clients.",
-                            "Worked closely with designers to translate mockups into functional web pages.",
-                            "Optimized web applications for performance and scalability."
+                            "Learned web technologies including HTML, CSS, JavaScript, React, PHP, and relational databases.",
+                            "Developed a JavaScript game and a web-based planning poker application.",
+                            "Gained hands-on experience in quality assurance and project management.",
                         ],
                     },
                 ]
@@ -214,21 +224,21 @@ export const portfolioData: PortfolioData = {
         subtitle: "A summary of my academic background and qualifications.",
         items: [
             {
-                institution: "University of Advanced Technology",
+                institution: "Laurentian University",
                 degree: "Master of Science",
-                fieldOfStudy: "Computer Science",
-                startDate: "2018",
-                endDate: "2020",
-                location: "Silicon Valley, CA",
+                fieldOfStudy: "Computational Sciences",
+                startDate: "2025",
+                endDate: "Present",
+                location: "Sudbury, Canada",
                 icon: GraduationCap,
             },
             {
-                institution: "State College of Engineering",
-                degree: "Bachelor of Science",
-                fieldOfStudy: "Software Engineering",
-                startDate: "2014",
-                endDate: "2018",
-                location: "Techville, USA",
+                institution: "Eastern Region Campus",
+                degree: "Bachelor of Engineering",
+                fieldOfStudy: "Computer Engineering",
+                startDate: "2016",
+                endDate: "2021",
+                location: "Dharan, Nepal",
                 icon: GraduationCap,
             },
         ],
@@ -238,72 +248,25 @@ export const portfolioData: PortfolioData = {
         subtitle: "A selection of my recent work, showcasing my skills in design and development.",
         items: [
             {
-                id: "project-1",
-                title: "E-commerce Platform",
-                description: "A full-featured e-commerce solution with a custom CMS and payment integration.",
-                imageUrl: "https://placehold.co/600x400.png",
-                tags: ["React", "Node.js", "Stripe", "MongoDB"],
-                liveUrl: "#",
-                sourceUrl: "#"
-            },
-            {
-                id: "project-2",
+                id: "portfolio-v2",
                 title: "Portfolio Website Template",
                 description: "A customizable portfolio template built with Next.js and Tailwind CSS.",
-                imageUrl: "https://placehold.co/600x400.png",
+                imageUrl: portfolioV2,
                 tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-                liveUrl: "#"
-            },
-            {
-                id: "project-3",
-                title: "Task Management App",
-                description: "A collaborative task management tool with real-time updates.",
-                imageUrl: "https://placehold.co/600x400.png",
-                tags: ["Vue.js", "Firebase", "Vuetify"],
-                sourceUrl: "#"
-            },
-        ],
-    },
-    blog: {
-        title: "My Blog",
-        subtitle: "Sharing my thoughts on technology, development, and design trends.",
-        posts: [
-            {
-                id: "blog-1",
-                slug: "mastering-react-hooks",
-                title: "Mastering React Hooks: A Deep Dive",
-                date: "2024-07-15",
-                excerpt: "Explore advanced patterns and best practices for using React Hooks effectively in your projects.",
-                imageUrl: "https://placehold.co/400x250.png",
-                tags: ["React", "JavaScript", "Web Development"],
-                content: "<p>React Hooks have revolutionized how we write components. This post delves into...</p><h2>Understanding useState</h2><p>More content here...</p>",
-                author: "Alex Johnson",
-                authorImageUrl: "https://placehold.co/50x50.png",
-            },
-            {
-                id: "blog-2",
-                slug: "the-future-of-ui-ux",
-                title: "The Future of UI/UX: Trends to Watch",
-                date: "2024-06-28",
-                excerpt: "Discover the upcoming trends in user interface and user experience design that will shape digital products.",
-                imageUrl: "https://placehold.co/400x250.png",
-                tags: ["UI/UX", "Design", "Technology"],
-                content: "<p>The digital landscape is constantly evolving. Here are some key UI/UX trends...</p>",
-                author: "Alex Johnson",
-                authorImageUrl: "https://placehold.co/50x50.png",
-
+                sourceUrl: "https://github.com/sitaramoli/portfolio-v2",
+                liveUrl: "https://portfolio-v2-tau-self.vercel.app/"
             },
         ],
     },
     contact: {
         title: "Get In Touch",
         subtitle: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!",
-        email: "alex.johnson@example.com",
-        phone: "+1 123 456 7890",
-        address: "123 Creative Lane, Innovation City, USA",
+        email: "sitaramoli1998@gmail.com",
+        phone: "+1 249 377 9086",
+        address: "108 King Street, Sudbury, Canada",
         socialLinks: [
-            {name: "Mail", url: "mailto:alex.johnson@example.com", icon: Mail},
-            {name: "LinkedIn", url: "https://linkedin.com/in/alexjohnson", icon: Linkedin},
+            {name: "Mail", url: "mailto:sitaramoli1998@gmail.com", icon: Mail},
+            {name: "LinkedIn", url: "https://www.linkedin.com/in/sita-ram-oli-a35740208/", icon: Linkedin},
         ],
         form: {
             namePlaceholder: "Your Name",
@@ -313,11 +276,10 @@ export const portfolioData: PortfolioData = {
         }
     },
     footer: {
-        text: `© ${new Date().getFullYear()} Alex Johnson. All rights reserved.`,
+        text: `© ${new Date().getFullYear()} Baymax. All rights reserved.`,
         socialLinks: [
-            {name: "GitHub", url: "https://github.com", icon: Github},
-            {name: "LinkedIn", url: "https://linkedin.com", icon: Linkedin},
-            {name: "Twitter", url: "https://twitter.com", icon: Twitter},
+            {name: "GitHub", url: "https://github.com/sitaramoli", icon: Github},
+            {name: "LinkedIn", url: "https://www.linkedin.com/in/sita-ram-oli-a35740208/", icon: Linkedin},
         ],
     }
 };
