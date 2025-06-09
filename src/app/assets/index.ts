@@ -10,6 +10,7 @@ import pythonIcon from "./Python.png"
 import reactIcon from "./React.png"
 import tsIcon from "./Ts.png"
 import portfolioV2 from "./portfolio-v2.png"
+import galaxyAttack from "./galaxy-attack.png"
 
 
 export {
@@ -25,4 +26,5 @@ export {
     reactIcon,
     tsIcon,
     portfolioV2,
+    galaxyAttack
 }

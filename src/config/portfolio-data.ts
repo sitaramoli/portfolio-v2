@@ -12,7 +12,8 @@ import {
     postgresIcon,
     htmlIcon,
     cssIcon,
-    portfolioV2
+    portfolioV2,
+    galaxyAttack
 } from "@/app/assets"
 import {StaticImageData} from "next/image";
 
@@ -255,6 +256,15 @@ export const portfolioData: PortfolioData = {
                 tags: ["Next.js", "Tailwind CSS", "TypeScript"],
                 sourceUrl: "https://github.com/sitaramoli/portfolio-v2",
                 liveUrl: "https://portfolio-v2-tau-self.vercel.app/"
+            },
+            {
+                id: "galaxy-attack",
+                title: "Galaxy Attack : Alien Shooter",
+                description: "A 2D space shooter game. The player controls a spaceship at the bottom of the screen, firing projectiles upwards. There are enemy spaceships (UFOs) at the top of the screen that the player needs to shoot down.",
+                imageUrl: galaxyAttack,
+                tags: ["JavaScript", "CSS", "HTML"],
+                sourceUrl: "https://github.com/sitaramoli/Outside/tree/main/js/final",
+                liveUrl: "https://sitaramoli.github.io/Outside/js/final/"
             },
         ],
     },
