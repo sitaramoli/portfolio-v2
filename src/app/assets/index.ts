@@ -11,6 +11,7 @@ import reactIcon from "./React.png"
 import tsIcon from "./Ts.png"
 import portfolioV2 from "./portfolio-v2.png"
 import galaxyAttack from "./galaxy-attack.png"
+import rda from "./rda.png"
 
 
 export {
@@ -26,5 +27,6 @@ export {
     reactIcon,
     tsIcon,
     portfolioV2,
-    galaxyAttack
+    galaxyAttack,
+    rda
 }

@@ -13,7 +13,8 @@ import {
     htmlIcon,
     cssIcon,
     portfolioV2,
-    galaxyAttack
+    galaxyAttack,
+    rda
 } from "@/app/assets"
 import {StaticImageData} from "next/image";
 
@@ -248,6 +249,14 @@ export const portfolioData: PortfolioData = {
         title: "My Projects",
         subtitle: "A selection of my recent work, showcasing my skills in design and development.",
         items: [
+            {
+                id: "rda",
+                title: "Remote Desktop Administration",
+                description: "Remote Desktop Administration is a JAVA based cross-platform client server stand-alone application with distributed message passing using JAVAFX where a central administrator acts as a server providing services to the connected clients within LAN / WLAN locations.",
+                imageUrl: rda,
+                tags: ["Java", "JavaFx"],
+                sourceUrl: "https://github.com/sitaramoli/Remote-Desktop-Administration"
+            },
             {
                 id: "portfolio-v2",
                 title: "Portfolio Website Template",
