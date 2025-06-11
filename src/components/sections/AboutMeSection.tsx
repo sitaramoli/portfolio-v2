@@ -38,24 +38,30 @@ export default function AboutMeSection() {
                     Skills</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {aboutMe.skills.map((skill) => (
-                        <Card key={skill.name} className="shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <CardContent className="flex flex-col items-center justify-center p-4 sm:p-6 h-full">
-                                {skill.logoUrl && (
-                                    <div className="relative h-16 w-16 mb-3">
-                                        <Image
-                                            src={skill.logoUrl}
-                                            alt={`${skill.name} logo`}
-                                            layout="fill"
-                                            objectFit="contain"
-                                            data-ai-hint={getSkillLogoHint(skill.name)}
-                                        />
-                                    </div>
-                                )}
-                                <p className="font-body font-semibold text-base sm:text-lg text-foreground text-center">
-                                    {skill.name}
-                                </p>
-                            </CardContent>
-                        </Card>
+                        <div key={skill.name} className="relative group">
+                            <Card className="shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <CardContent className="flex flex-col items-center justify-center p-4 sm:p-6 h-full">
+                                    {skill.logoUrl && (
+                                        <div className="relative h-20 w-16 mb-3">
+                                            <Image
+                                                src={skill.logoUrl}
+                                                alt={`${skill.name} logo`}
+                                                layout="fill"
+                                                objectFit="contain"
+                                                data-ai-hint={getSkillLogoHint(skill.name)}
+                                            />
+                                        </div>
+                                    )}
+                                    {/*<p className="font-body font-semibold text-base sm:text-lg text-foreground text-center">*/}
+                                    {/*    {skill.name}*/}
+                                    {/*</p>*/}
+                                </CardContent>
+                            </Card>
+
+                            <div className="absolute inset-0 bg-gray-800 bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg z-10">
+                                <span className="text-white text-lg font-bold">{skill.name}</span>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
